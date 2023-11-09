@@ -5,7 +5,11 @@
 <div>
   <ul>
     <% @lists.each do |list| %>
-    <li><%= list.name %></li>
+    <li><%= link_to list.name, list_path(list) %></li>
     <% end %>
   </ul>
+</div>
+
+<div>
+  <%= link_to "Add a new list", new_list_path %>
 </div>

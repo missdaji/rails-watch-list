@@ -3,9 +3,13 @@
 </div>
 
 <div>
-  <ul>
-    <% @list.movies.each do |movie| %>
-    <li><%= movie.title %><br><%= movie.overview %></li>
-    <% end %>
-  </ul>
+  <% @list.bookmarks.each do |bookmark| %>
+    <h2><%= bookmark.movie.title %></h2>
+    <p><%= bookmark.comment %></p>
+    <%= link_to "Delete", lists_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  <% end %>
+</div>
+
+<div>
+  <%= link_to "Back to my lists", lists_path %>
 </div>
